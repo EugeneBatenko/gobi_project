@@ -1,0 +1,20 @@
+header.header
+  nav.navbar.navbar-dark
+    .container-fluid.d-flex
+      ul.d-flex
+        .logo
+          img(src="img/logo/logo.svg")
+        li.nav-item
+          a.nav-link(href='/') Home
+
+      ul.d-flex
+        li.nav-item
+          a.nav-link(href='/login') Login
+        li.nav-item
+          a.nav-link(href='/signup') Sign up
+        if (user)
+          li.nav-item.text-white
+            | Welcome
+            = user.name
+          li.nav-item
+            a.nav-link(href='/logout') Logout

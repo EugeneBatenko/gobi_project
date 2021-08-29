@@ -1,0 +1,78 @@
+extends layout
+include clients/_client_form
+
+block content
+  section.hero-banner
+    .container.h-100
+      .row.h-100
+        .col-5.d-flex
+         img.hero-banner_img-doctor(src='img/landing/img-hero-doctor.png')
+
+         .hero-banner_info-container.d-flex.align-items-center.px-4
+           h4 Здохтирь Ваня
+        .col-7.d-flex.flex-column
+          .mt-5.mx-auto
+            h1.hero-banner_title.mb-0 Масаж
+            ul.hero-banner_list
+              li.hero-banner_items
+                span Лікувальний
+              li.hero-banner_items
+                span Тайський
+              li.hero-banner_items
+                span Злий
+              li.hero-banner_items
+                span В кредит
+              li.hero-banner_items
+                span Для бойових вертоьольотів апачі
+              a(href='/signup').hero-banner_items.link
+                span Записатись на прийом
+
+  section.services-landing
+    .container
+      .row
+        .col
+          h2.generic-title Наші послуги
+      .row
+        .col-4
+          .card
+            .card-body
+              h5.card-title Трубочистинг
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae cupiditate dolorum eos error incidunt ipsum modi
+        .col-4
+          .card
+            .card-body
+              h5.card-title Встановлення лінукса
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae cupiditate dolorum eos error incidunt ipsum modi
+
+        .col-4
+          .card
+            .card-body
+              h5.card-title Аркофлагеляція
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae cupiditate dolorum eos error incidunt ipsum modi
+
+  section.about-landing
+    .container
+      .row
+        .col
+          h2.generic-title.text-white Про нас
+          p.text-white Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, atque commodi deleniti et id libero omnis perspiciatis placeat quas ullam velit voluptatum. Culpa dolorem facilis quis ratione reiciendis veniam voluptatibus.
+          p.text-white Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consequatur deleniti dicta, dolorum eligendi facilis iusto labore laudantium magni maxime minima molestiae odio pariatur quidem quis repudiandae tempora, ullam voluptas.
+
+
+  section.statistic-landing.d-flex.justify-content-center
+    .counterCircle1.statistic-landing_counter(data-value='14')
+      span Видів масажу
+    .counterCircle2.statistic-landing_counter(data-value='20')
+      span Чогось ще
+    .counterCircle3.statistic-landing_counter(data-value='100')
+      span Годин
+    .counterCircle4.statistic-landing_counter(data-value='57')
+      span Клієнтів
+
+  section.booking-form
+    .container
+      .row.justify-content-center
+        .col-6
+          h2 Запис на прийом
+          +client_form('/api/clients', 'POST', 'add_client')
+

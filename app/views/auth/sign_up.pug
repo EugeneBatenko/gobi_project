@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  .container
+    h1 Sign up
+
+    form(action='/api/signup' method='POST' id='sign_up_form')
+      .form-floating.mb-3
+        input.form-control(type='name' name='name' id='name' placeholder='Enter name')
+        label(for='name') Name
+        .invalid-feedback.name-error
+
+      .form-floating.mb-3
+        input.form-control(type='email' name='email' id='email' placeholder='Enter email')
+        label(for='email') Email
+        .invalid-feedback.email-error
+
+      .form-floating.mb-3
+        input.form-control(type='password' name='password' id='password' placeholder='Create password')
+        label(for='password') Password
+        .invalid-feedback.password-error
+
+      .form-floating.mb-3
+        input.form-control(type='password' name='password-confirm' id='password_confirm' placeholder='Confirm password')
+        label(for='password_confirm') Password confirm
+
+      button.btn.btn-primary(type='submit') Submit
+      a.link-primary(href='/login') Sign in

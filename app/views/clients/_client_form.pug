@@ -1,0 +1,32 @@
+mixin client_form(action, method, id)
+  form(action=action method=method id=id)
+    .form-floating.mb-3
+      input(type='hidden' name='id' value=client ? client._id : '')
+      input.form-control(type='text' name='name' id='name' placeholder="name" value=client ? client.name : '')
+      label(for='name') Name
+
+    .form-floating.mb-3
+      input.form-control(type='email' name='email' id='email' placeholder="name@example.com" value=client ? client.email : '')
+      label(for='email') Email
+
+    .mb-3
+      h5 Gender
+      .form-check.form-check-inline
+        input.form-check-input(type='radio' name='gender' value='male' id='checkbox_male' checked=client && client.gender === 'male')
+        label.form-check-label(for='checkbox_male') Male
+
+      .form-check.form-check-inline
+        input.form-check-input(type='radio' name='gender' value='female' id='checkbox_female' checked=client && client.gender === 'female')
+        label.form-check-label(for='checkbox_female') Female
+
+    .mb-3
+      h5 Status
+      .form-check.form-check-inline
+        input.form-check-input(type='radio' name='status' value='active' id='checkbox_active' checked=client && client.status === 'active')
+        label.form-check-label(for='checkbox_active') Active
+
+      .form-check.form-check-inline
+        input.form-check-input(type='radio' name='status' value='inactive' id='checkbox_inactive' checked=client && client.status === 'inactive')
+        label.form-check-label(for='checkbox_inactive') Inactive
+
+    button.btn.btn-primary(type='submit') Save

@@ -1,0 +1,9 @@
+extends ../layout
+
+include _client_form
+
+block content
+  .container
+    h1.text-center New user
+    +client_form('/api/clients', 'POST', 'add_client')
+

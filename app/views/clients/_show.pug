@@ -1,0 +1,11 @@
+- let i = 0;
+each item in clients
+  tr
+    td= ++i
+    td= item.name
+    td= item.email
+    td= item.gender
+    td= item.status
+    td
+      a.btn.btn-warning(href=`/update_client?id=${item._id}`) Edit
+      button.btn.btn-danger(type='button' data-id=item._id onclick="deleteItem(this)") Delete

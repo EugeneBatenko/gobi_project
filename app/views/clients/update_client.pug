@@ -1,0 +1,8 @@
+extends ../layout
+include _client_form
+
+block content
+  .container
+    h1.text-center Update user
+    +client_form('', 'POST', 'update_client')
+
